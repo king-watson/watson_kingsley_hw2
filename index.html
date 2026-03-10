@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>OOP Counter</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7COpen+Sans" rel="stylesheet" type="text/css">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="grid-con">
+        <div id="app" class="col-span-full m-col-span-6">
+            <counter start="0" class="counter"></counter>
+            <counter start="5" class="counter"></counter>
+            <counter start="10" class="counter"></counter>
+        </div>
+    </div>
+</body>
+</html>
