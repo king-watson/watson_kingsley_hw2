@@ -1,6 +1,6 @@
 #hero {
     background: #0a0a0a;
-    padding: 100px 0 120px;
+    padding: 100px 0 90px;
     position: relative;
     overflow: hidden;
     min-height: 90vh;
@@ -8,7 +8,6 @@
     align-items: center;
 }
 
-/* noise texture overlay */
 #hero::before {
     content: '';
     position: absolute;
@@ -19,7 +18,6 @@
     z-index: 0;
 }
 
-/* yellow glow top left */
 #hero::after {
     content: '';
     position: absolute;
