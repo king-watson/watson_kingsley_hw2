@@ -67,5 +67,63 @@
     </div>
 </section>
 
+<section id="overview">
+    <div class="grid-con">
+
+        <div class="overview-header col-span-full">
+            <span class="section-label">01 / Overview</span>
+            <h2 class="section-title">What is Counter.js?</h2>
+        </div>
+
+        <div class="overview-intro col-span-full m-col-start-1 m-col-end-13 l-col-start-1 l-col-end-13">
+            <p class="overview-desc">
+                Counter.js is a reusable UI component built with vanilla JavaScript OOP.
+                It encapsulates all display logic, state management, and DOM manipulation
+                into a single class so you never write the same counter logic twice.
+            </p>
+        </div>
+
+        <div class="overview-cards col-span-full">
+
+            <div class="overview-card">
+                <span class="card-num">01</span>
+                <div class="card-icon">⚙️</div>
+                <h3>Encapsulated State</h3>
+                <p>Each counter instance manages its own count independently. No global variables, no conflicts between instances.</p>
+            </div>
+
+            <div class="overview-card">
+                <span class="card-num">02</span>
+                <div class="card-icon">🔒</div>
+                <h3>Floor at Zero</h3>
+                <p>The decrement method prevents the count from ever going below 0. Decrement and Reset buttons disable automatically.</p>
+            </div>
+
+            <div class="overview-card">
+                <span class="card-num">03</span>
+                <div class="card-icon">🧱</div>
+                <h3>DOM Separation</h3>
+                <p>mount() builds the UI once. update() handles all re-renders. Clean separation of concerns on every instance.</p>
+            </div>
+
+            <div class="overview-card">
+                <span class="card-num">04</span>
+                <div class="card-icon">🚀</div>
+                <h3>Extendable</h3>
+                <p>StepCounter extends Counter using extends and super — overriding only what it needs while reusing the rest.</p>
+            </div>
+
+        </div>
+
+        <div class="overview-problem col-span-full">
+            <div class="problem-inner">
+                <h3>What problem does it solve?</h3>
+                <p>Without a reusable class, every counter on your page would require its own DOM queries, event listeners, and state logic written from scratch. Counter.js packages all of that into one clean, instantiable component you can drop anywhere.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 </body>
 </html>
