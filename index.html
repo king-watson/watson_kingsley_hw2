@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>OOP Counter</title>
+    <title>Class OOP Counter</title>
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <script defer type="module" src="js/main.js"></script>
@@ -35,7 +35,6 @@
         </header>
     </div>
 
-    <!-- HERO -->
 <section id="hero">
     <div class="grid-con">
 
@@ -45,15 +44,12 @@
             <span class="hero-tag">Vanilla JS</span>
         </div>
 
-        <div class="hero-title-wrap col-span-full">
+        <div class="hero-body col-span-full m-col-start-1 m-col-end-7 l-col-start-1 l-col-end-6">
             <h2 class="hero-title">
                 <span class="hero-line">Build.</span>
                 <span class="hero-line accent">Count.</span>
                 <span class="hero-line">Extend.</span>
             </h2>
-        </div>
-
-        <div class="hero-body col-span-full m-col-start-1 m-col-end-7 l-col-start-1 l-col-end-6">
             <p class="hero-desc">
                 A reusable, extendable Counter component built with vanilla JavaScript OOP.
                 No frameworks. No dependencies. Just clean, encapsulated class design.
@@ -64,36 +60,11 @@
             </div>
         </div>
 
-        <div class="hero-counter-preview col-span-full m-col-start-8 m-col-end-13 l-col-start-8 l-col-end-13">
-            <div class="preview-window">
-                <div class="preview-bar">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
-                    <span class="preview-bar-label">counter.js</span>
-                </div>
-                <div class="preview-code">
-                    <p><span class="code-keyword">class</span> <span class="code-class">Counter</span> {</p>
-                    <p class="indent"><span class="code-fn">constructor</span>(<span class="code-param">selector, initialValue</span> = <span class="code-num">0</span>) {</p>
-                    <p class="indent2"><span class="code-keyword">this</span>.count = initialValue;</p>
-                    <p class="indent2"><span class="code-keyword">this</span>.<span class="code-fn">mount</span>();</p>
-                    <p class="indent">}</p>
-                    <p class="indent"><span class="code-fn">increment</span>() {</p>
-                    <p class="indent2"><span class="code-keyword">this</span>.count<span class="code-op">++</span>;</p>
-                    <p class="indent2"><span class="code-keyword">this</span>.<span class="code-fn">update</span>();</p>
-                    <p class="indent">}</p>
-                    <p>}</p>
-                </div>
-            </div>
+        <div class="hero-img col-span-full m-col-start-8 m-col-end-13 l-col-start-8 l-col-end-13">
+            <img src="images/code-icon-f.png" alt="counter code preview">
         </div>
 
     </div>
-
-    <!-- decorative floating badges -->
-    <div class="hero-badge badge-1">encapsulation</div>
-    <div class="hero-badge badge-2">inheritance</div>
-    <div class="hero-badge badge-3">OOP</div>
-
 </section>
 
 </body>
