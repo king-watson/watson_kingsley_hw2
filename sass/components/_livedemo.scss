@@ -1,0 +1,105 @@
+/* ============================================================
+   LIVE DEMO SECTION
+   ============================================================ */
+
+#live-demo {
+    background: #0a0a0a;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+#live-demo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.demo-header {
+    margin-bottom: 48px;
+}
+
+#live-demo .section-label {
+    color: yellow;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#live-demo .section-title {
+    color: white;
+}
+
+.demo-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    color: white;
+    margin: 12px 0 0;
+}
+
+/* ── COUNTER SLOT — styles the elements JS injects ── */
+.counter-slot .counter-display {
+    font-family: 'Syne', sans-serif;
+    font-size: 35px;
+    color: yellow;
+    margin-bottom: 15px;
+}
+
+.counter-slot button {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+.counter-slot .btn-inc {
+    background: yellow;
+    color: black;
+}
+
+.counter-slot .btn-inc:hover {
+    background: lightgreen;
+    color: black;
+}
+
+.counter-slot .btn-dec,
+.counter-slot .btn-reset {
+    background: white;
+    color: black;
+}
+
+.counter-slot .btn-dec:hover:not(:disabled),
+.counter-slot .btn-reset:hover:not(:disabled) {
+    background: red;
+}
+
+.counter-slot button.inactive,
+.counter-slot button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 767px) {
+    #live-demo {
+        padding: 70px 0;
+    }
+
+    .counter-wrapper {
+        margin-bottom: 16px;
+    }
+
+    .counter-slot .counter-display {
+        font-size: 2.8rem;
+    }
+
+    .counter-slot button {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+}
