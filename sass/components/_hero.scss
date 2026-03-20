@@ -3,9 +3,14 @@
     padding: 100px 0 90px;
     position: relative;
     overflow: hidden;
-    min-height: 90vh;
-    display: flex;
+}
+
+#hero .grid-con {
+    position: relative;
+    z-index: 1;
+    min-height: 50vh;
     align-items: center;
+    align-content: center;
 }
 
 #hero::before {
@@ -30,25 +35,22 @@
     z-index: 0;
 }
 
-#hero .grid-con {
-    position: relative;
-    z-index: 1;
-    align-items: center;
-}
+
 
 .hero-title {
     display: flex;
     flex-direction: column;
     font-size: 110px;
     line-height: 0.95;
-    letter-spacing: -0.03em;
     margin: 0 0 32px;
     font-family: 'Special Gothic Expanded One', sans-serif;
+    overflow: hidden;
 }
+
 
 .hero-line {
     display: block;
-    color: #f5f2eb;
+    color: white;
 }
 
 .hero-line.accent {
@@ -120,21 +122,48 @@
 
 .hero-img img {
     width: 100%;
-    max-width: 700px;
     border-radius: 12px;
 }
 
 @media screen and (max-width: 767px) {
     #hero {
-        padding: 70px 0 80px;
+        padding: 70px 0 10px;
         min-height: auto;
     }
 
     .hero-img {
-        padding-top: 48px;
+        margin-top: 50px;
     }
 
     .hero-title {
         font-size: clamp(3rem, 14vw, 5rem);
     }
+}
+
+@media screen and (min-width: 767px) {
+    .hero-title {
+    display: flex;
+    flex-direction: column;
+    font-size: 85px;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin: 0 0 32px;
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    overflow: hidden;
+    padding: 0;
+}
+}
+
+@media screen and (min-width: 1200px) {
+    .hero-title {
+    display: flex;
+    flex-direction: column;
+    font-size: 110px;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin: 0 0 32px;
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    overflow: hidden;
+    padding: 0;
+}
 }
