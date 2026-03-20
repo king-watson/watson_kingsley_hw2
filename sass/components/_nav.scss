@@ -1,7 +1,6 @@
 .full-width-header {
-    background: black;
+    background: #0a0a0a;
     border-bottom: 3px solid yellow;
-    box-shadow: 0 4px 40px rgba(247, 217, 76, 0.07);
     position: relative;
 }
 
@@ -12,10 +11,11 @@ header {
     align-items: center;
 }
 
-#header-logo img {
-    height: 70px;
-    width: auto;
-    display: block;
+.logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    color: yellow;
+    text-decoration: none;
 }
 
 #hamburger {
@@ -25,6 +25,7 @@ header {
     cursor: pointer;
     padding: 0px 10px;
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 .overlay {
