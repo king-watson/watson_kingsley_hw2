@@ -60,7 +60,7 @@
     background: rgb(12, 12, 12);
     border: 1.5px solid rgb(32, 32, 32);
     border-radius: 12px;
-    padding: 24px 28px;
+    padding: 24px 24px;
     margin-bottom: 20px;
     position: relative;
 }
@@ -127,7 +127,7 @@
 
 @media screen and (max-width: 767px) {
     #how2use {
-        padding: 70px 0;
+        padding: 0;
     }
 
     .howto-step {

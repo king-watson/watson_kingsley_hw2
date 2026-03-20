@@ -52,8 +52,8 @@
 }
 
 .overview-card {
-     background: #0a0a0a;
-     box-shadow: 0 0 6px yellow;
+    background: #0a0a0a;
+    border: 1.5px solid rgb(32, 32, 32);
     border-radius: 12px;
     padding: 32px;
     position: relative;
@@ -98,7 +98,7 @@
     background: #0a0a0a;
     border-radius: 12px;
     padding: 35px 40px;
-    box-shadow: 0 0 6px yellow;
+    border: 1.5px solid rgb(32, 32, 32);
     margin-bottom: 20px;
 }
 
@@ -121,6 +121,8 @@
 @media screen and (max-width: 767px) {
     #overview {
         padding: 70px 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     .overview-cards {
