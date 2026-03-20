@@ -36,33 +36,14 @@
     align-items: center;
 }
 
-.hero-eyebrow {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 32px;
-}
-
-.hero-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #0a0a0a;
-    background: yellow;
-    padding: 5px 12px;
-    border-radius: 2px;
-}
-
 .hero-title {
     display: flex;
     flex-direction: column;
-    font-size: clamp(3.5rem, 10vw, 8rem);
-    font-weight: 800;
+    font-size: 110px;
     line-height: 0.95;
     letter-spacing: -0.03em;
     margin: 0 0 32px;
+    font-family: 'Special Gothic Expanded One', sans-serif;
 }
 
 .hero-line {
@@ -76,9 +57,9 @@
 
 .hero-desc {
     font-family: 'DM Mono', monospace;
-    font-size: 0.95rem;
+    font-size: 15px;
     line-height: 1.8;
-    color: rgba(245, 242, 235, 0.5);
+    color: white;
     max-width: 480px;
     margin-bottom: 36px;
 }
@@ -95,9 +76,8 @@
     gap: 8px;
     background: yellow;
     color: #0a0a0a;
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
+    font-family: "Figtree", sans-serif;
+    font-size: 14px;
     padding: 14px 28px;
     border-radius: 8px;
     text-decoration: none;
@@ -115,7 +95,7 @@
     gap: 8px;
     background: transparent;
     color: white;
-    font-family: 'Syne', sans-serif;
+    font-family: "Figtree", sans-serif;
     font-weight: 700;
     font-size: 14px;
     padding: 15px 28px;

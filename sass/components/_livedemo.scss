@@ -1,7 +1,3 @@
-/* ============================================================
-   LIVE DEMO SECTION
-   ============================================================ */
-
 #live-demo {
     background: #0a0a0a;
     padding: 0px;
@@ -24,9 +20,10 @@
 }
 
 #live-demo .section-label {
-    color: yellow;
-    margin-top: 30px;
-    margin-bottom: 30px;
+      color: yellow;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    font-size: 14px
 }
 
 #live-demo .section-title {
@@ -40,16 +37,15 @@
     margin: 12px 0 0;
 }
 
-/* ── COUNTER SLOT — styles the elements JS injects ── */
 .counter-slot .counter-display {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Special Gothic Expanded One', sans-serif;
     font-size: 35px;
     color: yellow;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 .counter-slot button {
-    font-family: 'Syne', sans-serif;
+    font-family: "Figtree", sans-serif;
     font-size: 14px;
     padding: 10px 20px;
     border-radius: 8px;

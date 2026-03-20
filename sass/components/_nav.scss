@@ -1,7 +1,6 @@
 .full-width-header {
     background: #0a0a0a;
     border-bottom: 3px solid yellow;
-    position: relative;
 }
 
 header {
@@ -12,8 +11,8 @@ header {
 }
 
 .logo {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 12px;
     color: yellow;
     text-decoration: none;
 }
@@ -71,7 +70,7 @@ header {
 }
 
 #menu li + li {
-    margin-top: 2rem;
+    margin-top: 36px;
 }
 
 #menu a {
@@ -80,6 +79,7 @@ header {
     text-decoration: none;
     letter-spacing: 0.5px;
     position: relative;
+    font-family: "Figtree", sans-serif;
 }
 
 #menu a:hover { color: #ffffff; }
@@ -110,6 +110,13 @@ header {
         background: transparent;
     }
 
+    .logo {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 18px;
+    color: yellow;
+    text-decoration: none;
+}
+
     #menu ul {
         display: flex;
         align-items: center;
@@ -125,36 +132,20 @@ header {
 
     #menu li + li {
         margin-top: 0;
-        border-left: 1px solid rgba(247, 217, 76, 0.2);
     }
 
     #menu a {
         display: block;
-        font-size: 0.82rem;
-        font-weight: 500;
+        font-size: 14px;
         color: yellow;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 1px;
         padding: 8px 20px;
         position: relative;
         transition: color 0.2s ease;
     }
 
-    #menu a::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: yellow;
-        transform: scaleY(0);
-        transform-origin: bottom;
-        transition: transform 0.25s ease;
-        z-index: -1;
-    }
-
-    #menu a::after { display: none; }
-
-    #menu a:hover { color: #0a0a0a; }
-    #menu a:hover::before { transform: scaleY(1); }
+    #menu a:hover { color: white; }
 
     #header-logo img {
         height: 75px;

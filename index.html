@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <title>Class OOP Counter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:ital,wght@0,300..900;1,300..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <script defer type="module" src="js/main.js"></script>
@@ -13,13 +17,13 @@
     <div class="full-width-header">
         <header class="grid-con">
 
-           <div id="header-logo" class="col-span-2 m-col-start-1 m-col-end-5 l-col-start-1 l-col-end-5">
+           <div id="header-logo" class="col-span-2 m-col-start-1 m-col-end-6 l-col-start-1 l-col-end-6">
                 <a href="index.html" class="logo">Kingsley — Counter OOP JS</a>
            </div>
 
             <button id="hamburger" class="col-start-4 col-end-4">&#9776;</button>
 
-            <div class="overlay m-col-start-5 m-col-end-13 l-col-start-5 l-col-end-13" id="overlay">
+            <div class="overlay m-col-start-6 m-col-end-13 l-col-start-8 l-col-end-13" id="overlay">
                 <button id="close">&#10005;</button>
                 <nav id="menu">
                     <ul>
@@ -35,14 +39,7 @@
 
 <section id="hero">
     <div class="grid-con">
-
-        <div class="hero-eyebrow col-span-full">
-            <span class="hero-tag">JavaScript OOP</span>
-            <span class="hero-tag">ES Modules</span>
-            <span class="hero-tag">Vanilla JS</span>
-        </div>
-
-        <div class="hero-body col-span-full m-col-start-1 m-col-end-7 l-col-start-1 l-col-end-6">
+        <div class="hero-body col-span-full m-col-start-1 m-col-end-6 l-col-start-1 l-col-end-6">
             <h2 class="hero-title">
                 <span class="hero-line">Build.</span>
                 <span class="hero-line accent">Count.</span>
@@ -58,7 +55,7 @@
             </div>
         </div>
 
-        <div class="hero-img col-span-full m-col-start-8 m-col-end-13 l-col-start-8 l-col-end-13">
+        <div class="hero-img col-span-full m-col-start-6 m-col-end-13 l-col-start-8 l-col-end-13">
             <img src="images/code-icon-f.png" alt="counter code preview">
         </div>
 
@@ -70,7 +67,7 @@
 
         <div class="overview-header col-span-full">
             <span class="section-label">01 / Overview</span>
-            <h2 class="section-title">What is Counter.js?</h2>
+            <h2 class="section-title">What Is Counter.js?</h2>
         </div>
 
         <div class="overview-intro col-span-full m-col-start-1 m-col-end-13 l-col-start-1 l-col-end-13">
@@ -115,7 +112,7 @@
 
         <div class="overview-problem col-span-full">
             <div class="problem-inner">
-                <h3>What problem does it solve?</h3>
+                <h3>What Problem Does It Solve?</h3>
                 <p>Without a reusable class, every counter on your page would require its own DOM queries, event listeners, and state logic written from scratch. Counter.js packages all of that into one clean, instantiable component you can drop anywhere.</p>
             </div>
         </div>
