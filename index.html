@@ -212,73 +212,43 @@
 
         <div class="howto-header col-span-full">
             <span class="section-label">04 / Software Skills</span>
-            <h2 class="section-title">Get It Up & Running In 3 Steps</h2>
         </div>
 
         <div class="howto-step col-span-full m-col-span-4 l-col-span-4">
-            <h3>Add HTML Containers</h3>
-            <p>Create a div with a unique id where each counter will be rendered.</p>
+            <img src="images/photoshop-logo.svg" alt="Photoshop">
+            <h3>Photoshop</h3>
         </div>
 
         <div class="howto-step col-span-full m-col-span-4 l-col-span-4">
-            <h3>Import The Module</h3>
-            <p>Use ES module imports in your JS entry file to pull in Counter and StepCounter.</p>
+            <img src="images/after-effects-logo.svg" alt="After Effects">
+            <h3>After Effects</h3>
         </div>
 
         <div class="howto-step col-span-full m-col-span-4 l-col-span-4">
-            <h3>Instantiate</h3>
-            <p>Call new Counter() or new StepCounter() with your selector and starting values.</p>
+            <img src="images/premiere-logo.svg" alt="Premiere">
+            <h3>Premiere</h3>
         </div>
 
-        <div class="code-block col-span-full m-col-span-full l-col-span-full">
-            <span class="code-block-label">HTML</span>
-<pre><code>
-&lt;div id="counter-container1"&gt;&lt;/div&gt;
-&lt;div id="counter-container2"&gt;&lt;/div&gt;
-&lt;div id="counter-container3"&gt;&lt;/div&gt;
-&lt;div id="counter-container4"&gt;&lt;/div&gt;
-</code></pre>
+        <div class="howto-step col-span-full m-col-span-4 l-col-span-4">
+            <img src="images/illustrator-logo.svg" alt="Illustrator">
+            <h3>Illustrator</h3>
         </div>
 
-        <div class="code-block col-span-full m-col-span-full l-col-span-full">
-            <span class="code-block-label">JAVASCRIPT</span>
-            <pre><code
->import { Counter, StepCounter } from './modules/counter.js';
-                
-const counter1 = new Counter('#counter-container1', 10);
-const counter2 = new Counter('#counter-container2');
-const counter3 = new StepCounter('#counter-container3', 0, 5);
-const counter4 = new StepCounter('#counter-container4', 10, 3);</code></pre>
+        <div class="howto-step col-span-full m-col-span-4 l-col-span-4">
+            <img src="images/cinema-logo.svg" alt="Cinema 4D">
+            <h3>Cinema 4D</h3>
         </div>
 
-        <div class="howtobox col-span-full m-col-start-1 m-col-span-6 l-col-span-6">
-    <h4>Counter( selector, initialValue )</h4>
-    <div class="howtobox-row">
-        <span class="howtobox-name">selector</span>
-        <span class="howtobox-desc">CSS selector string for the container element. e.g. '#my-counter'</span>
-    </div>
-    <div class="howtobox-row">
-        <span class="howtobox-name">initialValue</span>
-        <span class="howtobox-desc">Starting count value. Defaults to 0 if not provided.</span>
-    </div>
+        <div class="howto-step col-span-full m-col-span-4 l-col-span-4">
+            <img src="images/figma-logo.svg" alt="Figma">
+            <h3>Figma</h3>
+        </div>
+
+        <div class="howto-load-more col-span-full">
+    <button id="load-more-btn">See more...</button>
 </div>
 
-<div class="howtobox col-span-full m-col-span-6 l-col-span-6">
-    <h4>StepCounter( selector, initialValue, step )</h4>
-    <div class="howtobox-row">
-        <span class="howtobox-name">selector</span>
-        <span class="howtobox-desc">CSS selector string for the container element.</span>
     </div>
-    <div class="howtobox-row">
-        <span class="howtobox-name">initialValue</span>
-        <span class="howtobox-desc">Starting count value. Defaults to 0.</span>
-    </div>
-    <div class="howtobox-row">
-        <span class="howtobox-name">step</span>
-        <span class="howtobox-desc">Amount added or subtracted per click. Defaults to 1.</span>
-    </div>
-</div>
-        </div>
 </section>
 
 <section id="live-demo">
