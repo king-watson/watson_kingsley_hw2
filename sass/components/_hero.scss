@@ -3,6 +3,7 @@
     padding: 100px 0 90px;
     position: relative;
     overflow: hidden;
+    min-height: calc(100vh - 119px);
 }
 
 #hero .grid-con {
@@ -53,8 +54,8 @@
     color: white;
 }
 
-.hero-line.accent {
-    color: yellow;
+.accent {
+    color: yellow; /* or whatever your accent color is */
 }
 
 .hero-desc {
@@ -112,27 +113,93 @@
     color: yellow;
 }
 
-.hero-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 8px yellow;
-    border-radius: 12px;
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.hero-img img {
-    width: 100%;
-    border-radius: 12px;
+.photo-wrapper {
+  position: relative;
+  display: inline-block;
 }
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100px;
+  border: 2px solid yellow;
+  background-color: #111111;
+  display: block;
+}
+
+.badge-circle {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: yellow;
+  color: #000000;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.3;
+  border: 3px solid #ffffff;
+  font-family: "Figtree", sans-serif;
+}
+
+/* Ticker */
+
+.ticker-bar {
+  background-color: yellow;
+  overflow: hidden;
+  padding: 11px 0;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-flex;
+  gap: 60px;
+  animation: ticker 60s linear infinite;
+}
+
+.ticker-track span {
+  color: #000000;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Special Gothic Expanded One', sans-serif;
+}
+
+
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* Tablet */
+@media (min-width: 768px) {
+  .photo-wrapper {
+    width: 335px;
+    height: 415px;
+    margin-left: 60px;
+  }
+}
+
+
 
 @media screen and (max-width: 767px) {
     #hero {
         padding: 70px 0 10px;
         min-height: auto;
-    }
-
-    .hero-img {
-        margin-top: 50px;
     }
 
     .hero-title {
@@ -158,9 +225,9 @@
     .hero-title {
     display: flex;
     flex-direction: column;
-    font-size: 110px;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
+    font-size: 45px;
+    line-height: 1;
+    letter-spacing: 0em;
     margin: 0 0 32px;
     font-family: 'Special Gothic Expanded One', sans-serif;
     overflow: hidden;
