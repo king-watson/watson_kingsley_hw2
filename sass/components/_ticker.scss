@@ -1,8 +1,8 @@
+@use '../abstracts/mixins' as *;
+
 // =====================
 // TICKER
 // =====================
-
-@use '../abstracts/mixins' as *;
 
 .ticker-bar {
     background: #0f0f0f;
@@ -11,6 +11,8 @@
     padding: 14px 0;
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
+    z-index: 1;
 }
 
 .ticker-track {
@@ -28,7 +30,7 @@
     }
 
     span.ticker-hi {
-        color: #e8e800;
+        color: red;
     }
 }
 
