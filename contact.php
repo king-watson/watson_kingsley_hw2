@@ -21,32 +21,35 @@
 <body>
 
 <div class="full-width-header">
-  <header class="grid-con">
+    <header class="grid-con">
 
-    <div id="header-logo" class="col-span-2 m-col-start-1 m-col-end-5 l-col-start-1 l-col-end-5">
-      <img src="images/port-logo.png" alt="Kingsley Watson"/>
-    </div>
+        <div id="header-logo" class="col-span-2 m-col-start-1 m-col-end-3 l-col-start-1 l-col-end-3">
+            <a href="index.php" class="logo">KW</a>
+        </div>
 
-    <button id="hamburger" class="col-start-4 col-end-4">&#9776;</button>
+        <button id="hamburger" class="col-start-4 col-end-4">&#9776;</button>
 
-    <div class="overlay m-col-start-5 m-col-end-10 l-col-start-5 l-col-end-10" id="overlay">
-      <button id="close">&#10005;</button>
-      <nav id="menu">
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="index.php">Projects</a></li>
-          <li><a href="index.php">About Me</a></li>
-        </ul>
-      </nav>
-    </div>
+        <div class="overlay m-col-start-3 m-col-end-11 l-col-start-3 l-col-end-11" id="overlay">
+            <button id="close">&#10005;</button>
+            <nav id="menu">
+                <ul>
+                    <li><a href="#featured-work">Projects</a></li>
+                    <li><a href="#overview">About Me</a></li>
+                    <li><a href="#how2use">Skills</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <div class="nav-cta m-col-span-2 l-col-start-11 l-col-end-12">
-      <a href="contact.php"><button class="btn-contact">Contact</button></a>
-    </div>
+        <div class="nav-cta m-col-start-11 m-col-end-13 l-col-start-11 l-col-end-13">
+            <?php if (isset($_SESSION['logged_in_user'])): ?>
+                <a href="/watson-kingsley-portfolio/logout.php"><button class="btn-contact">Logout</button></a>
+            <?php else: ?>
+                <a href="contact.php"><button class="btn-contact">Contact</button></a>
+            <?php endif; ?>
+        </div>
 
-  </header>
+    </header>
 </div>
-
 
 <section class="contact-page grid-con">
 
@@ -78,35 +81,25 @@
 </section>
 
 <footer class="site-footer">
-  <hr>
-  <div class="footer-container grid-con">
-    <div class="footer-about col-span-4 m-col-span-4 l-col-span-4">
-      <h3>Kingsley Watson</h3>
-      <p>I'm always open to new projects and collaborations. Feel free to reach out to me anytime!</p>
+    <div class="footer-container grid-con">
+
+        <div class="footer-logo col-span-4 m-col-span-4 l-col-span-4">
+            <h3>Kingsley Watson</h3>
+        </div>
+
+        <div class="footer-copy col-span-4 m-col-span-4 l-col-span-4">
+            <p>&copy; 2026 All rights reserved.</p>
+        </div>
+
+        <div class="footer-social col-span-4 m-col-span-4 l-col-span-4">
+            <ul class="social-icons">
+                <li><a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin-logo-port.svg" alt="LinkedIn"></a></li>
+                <li><a href="https://www.instagram.com/kingsley.watson" target="_blank"><img src="images/insta-logo.svg" alt="Instagram"></a></li>
+                <li><a href="mailto:your@email.com"><img src="images/email-logo-port.svg" alt="Email"></a></li>
+            </ul>
+        </div>
+
     </div>
-
-    <div class="footer-links col-span-4 m-col-span-4 l-col-span-4">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="index.php">Projects</a></li>
-        <li><a href="contact.php">Contact</a></li>
-      </ul>
-    </div>
-
-    <section class="footer-social col-span-4 m-col-span-4 l-col-span-4">
-      <h4>Follow Me</h4>
-      <ul class="social-icons">
-        <li><a href="https://www.instagram.com/kingsley.watson" target="_blank"><img src="images/insta-logo.svg" alt="Instagram"></a></li>
-        <li><a href="https://www.facebook.com" target="_blank"><img src="images/facebook-logo.svg" alt="Facebook"></a></li>
-        <li><a href="https://www.x.com" target="_blank"><img src="images/x-logo1.svg" alt="X"></a></li>
-      </ul>
-    </section>
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; 2025 Kingsley Watson. All rights reserved.</p>
-  </div>
 </footer>
 
 </body>

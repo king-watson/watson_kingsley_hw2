@@ -1,0 +1,177 @@
+/* ======================================================
+   PROJECT PAGE STYLES (SEVEN- SERIES)
+   ====================================================== */
+
+/* Global Project Background */
+main {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Figtree', sans-serif;
+    padding-bottom: 80px;
+}
+
+/* 1. Grid & Layout Fixes 
+   Ensures elements span the full 12-column grid container */
+.seven-overview-text, 
+.seven-goal-text, 
+.seven-process-text, 
+.seven-problem-text, 
+.seven-result-text {
+    width: 100%;
+    max-width: 100%; /* Overrides previous limits to allow full-width spanning */
+}
+
+/* Hero Section */
+.seven-hero {
+    padding-top: 40px;
+    margin-bottom: 60px;
+}
+
+.seven-hero-img {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid #1e1e1e;
+    display: block;
+}
+
+/* Titles & Subtitles */
+.seven-overview-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    text-transform: uppercase;
+    color: #e8e800; /* Branding Neon Yellow */
+    line-height: 1;
+    margin-bottom: 40px;
+}
+
+.seven-overview-subtitle, 
+.seven-goal-title, 
+.seven-process-title, 
+.seven-problem-title, 
+.seven-result-title {
+    font-family: 'Figtree', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e8e800;
+    margin-bottom: 16px;
+    display: block;
+}
+
+/* Article Text Blocks */
+.seven-overview-desc, 
+.seven-process-desc, 
+.seven-problem-desc, 
+.seven-result-desc {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 48px;
+    /* max-width removed here to ensure it spans the column width */
+}
+
+/* Tags (Type & Team) */
+.seven-overview-tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.seven-overview-tag {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Goal List 
+   Matches the 'Inside My Mind' card aesthetic from your homepage */
+.seven-goal-list {
+    counter-reset: goal-counter;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.seven-goal-list li {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    padding: 24px;
+    border-radius: 12px;
+    position: relative;
+    font-weight: 500;
+    transition: border-color 0.3s ease;
+}
+
+.seven-goal-list li:hover {
+    border-color: #e8e800;
+}
+
+.seven-goal-list li::before {
+    counter-increment: goal-counter;
+    content: counter(goal-counter, decimal-leading-zero);
+    font-family: 'Anton', sans-serif;
+    font-size: 12px;
+    color: #e8e800;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Deep Dive Images */
+.seven-deepdive {
+    row-gap: 24px;
+    margin-bottom: 60px;
+}
+
+.seven-deepdive-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #1e1e1e;
+}
+
+.seven-deepdive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.seven-deepdive-wrapper:hover .seven-deepdive-img {
+    transform: scale(1.05);
+}
+
+/* Video Section */
+.seven-video-wrapper {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 16px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.seven-video-element {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 767px) {
+    .seven-overview-title {
+        font-size: 3rem;
+    }
+    
+    .seven-goal-list {
+        grid-template-columns: 1fr;
+    }
+}
