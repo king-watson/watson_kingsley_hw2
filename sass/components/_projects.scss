@@ -1,0 +1,171 @@
+// =====================
+// FEATURED PROJECTS
+// =====================
+
+.featured-work {
+    background: #0a0a0a;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        opacity: 0.4;
+        z-index: 0;
+    }
+}
+
+.featured-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+}
+
+.section-label {
+    font-family: 'Figtree', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #e8e800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.featured-heading {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 42px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+
+    @media (min-width: 1200px) {
+        font-size: 52px;
+    }
+}
+
+.featured-subtext {
+    font-family: 'Figtree', sans-serif;
+    font-size: 13px;
+    color: #444;
+}
+
+// Work grid
+.work-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.work-box {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #1e1e1e;
+    background: #111;
+    cursor: pointer;
+
+    &:hover .work-overlay {
+        opacity: 1;
+    }
+
+    &:hover .work-img {
+        transform: scale(1.05);
+    }
+}
+
+.work-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+
+    @media (min-width: 1200px) {
+        height: 300px;
+    }
+}
+
+.work-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.work-tag {
+    font-family: 'Figtree', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #000;
+    background: #e8e800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+.work-title {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.work-desc {
+    font-family: 'Figtree', sans-serif;
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.work-btn {
+    font-family: 'Figtree', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #e8e800;
+    text-decoration: none;
+    border: 1px solid #e8e800;
+    padding: 8px 18px;
+    border-radius: 6px;
+    width: fit-content;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background: #e8e800;
+        color: #000;
+    }
+}
+
+@media (max-width: 767px) {
+    .featured-work {
+        padding: 48px 0;
+    }
+
+    .featured-heading {
+        font-size: 32px;
+    }
+}

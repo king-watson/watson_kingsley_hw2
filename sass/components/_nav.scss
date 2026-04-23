@@ -1,165 +1,146 @@
+// =====================
+// HEADER & NAV
+// =====================
+
 .full-width-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background: #0a0a0a;
-    border-bottom: 3px solid yellow;
+    border-bottom: 1px solid #1a1a1a;
 }
 
-header {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background: transparent;
+header.grid-con {
+    align-items: center;
+    padding: 18px 0;
+}
+
+#header-logo {
+    display: flex;
     align-items: center;
 }
 
-.logo {
+#header-logo .logo {
     font-family: 'Special Gothic Expanded One', sans-serif;
-    font-size: 12px;
-    color: yellow;
+    font-size: 20px;
+    color: #fff;
     text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #e8e800;
+    }
 }
 
 #hamburger {
-    font-size: 28px;
-    background: none;
-    color: yellow;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 22px;
     cursor: pointer;
-    padding: 0px 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
+    justify-self: end;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
 }
 
 .overlay {
     display: none;
     position: fixed;
     inset: 0;
-    background: black;
-    justify-content: center;
+    background: #0a0a0a;
+    z-index: 200;
+    flex-direction: column;
     align-items: center;
-    z-index: 10000;
-}
+    justify-content: center;
 
-.overlay.open {
-    display: flex;
+    &.active {
+        display: flex;
+    }
+
+    @media (min-width: 768px) {
+        display: flex;
+        position: static;
+        background: transparent;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        inset: unset;
+        z-index: auto;
+    }
 }
 
 #close {
     position: absolute;
-    top: 25px;
-    right: 25px;
-    font-size: 28px;
-    background: none;
-    color: yellow;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 22px;
     cursor: pointer;
-    padding: 4px 10px;
-    border-radius: 6px;
-    line-height: 1;
-}
 
-#close:hover {
-    color: white;
+    @media (min-width: 768px) {
+        display: none;
+    }
 }
 
 #menu ul {
     list-style: none;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
     padding: 0;
     margin: 0;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 28px;
+    }
 }
 
-#menu li {
-    margin: 0;
-}
-
-#menu li + li {
-    margin-top: 36px;
-}
-
-#menu a {
-    color: yellow;
-    font-size: 30px;
+#menu ul li a {
+    font-family: 'Figtree', sans-serif;
+    font-size: 28px;
+    color: #888;
     text-decoration: none;
-    letter-spacing: 0.5px;
-    position: relative;
-    font-family: "Figtree", sans-serif;
-}
+    transition: color 0.2s ease;
 
-#menu a:hover { color: #ffffff; }
-#menu a:hover::after { width: 100%; }
-
-.no-scroll {
-    overflow: hidden;
-    height: 100vh;
-}
-
-@media screen and (min-width: 768px) {
-
-    .no-scroll {
-        overflow: auto;
-        height: auto;
+    &:hover {
+        color: #e8e800;
     }
 
-    #hamburger,
-    #close {
-        display: none;
+    @media (min-width: 768px) {
+        font-size: 13px;
     }
-
-    .overlay {
-        display: block;
-        position: static;
-        width: auto;
-        height: auto;
-        background: transparent;
-    }
-
-    .logo {
-    font-family: 'Special Gothic Expanded One', sans-serif;
-    font-size: 18px;
-    color: yellow;
-    text-decoration: none;
 }
 
-    #menu ul {
+.nav-cta {
+    display: none;
+
+    @media (min-width: 768px) {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 0;
-        margin: 0;
-        text-align: left;
-    }
-
-    #menu li {
-        margin: 0;
-    }
-
-    #menu li + li {
-        margin-top: 0;
-    }
-
-    #menu a {
-        display: block;
-        font-size: 14px;
-        color: yellow;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 8px 20px;
-        position: relative;
-        transition: color 0.2s ease;
-    }
-
-    #menu a:hover { color: white; }
-
-    #header-logo img {
-        height: 75px;
     }
 }
 
-@media screen and (min-width: 1200px) {
+.btn-contact {
+    font-family: 'Figtree', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    background: #e8e800;
+    color: #000;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
 
-    #header-logo img {
-        height: 100px;
-    }
-
-    #menu a {
-        font-size: 0.88rem;
-        padding: 8px 26px;
+    &:hover {
+        background: #fff;
     }
 }
