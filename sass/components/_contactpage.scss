@@ -1,0 +1,144 @@
+/* ======================================================
+   CONTACT PAGE - FULL REWRITE
+   ====================================================== */
+
+/* 1. Page Layout & Grid Fixes */
+.contact-page.grid-con {
+    padding: 80px 0;
+    min-height: 80vh;
+    align-items: start; /* Aligns content to the top */
+}
+
+/* 2. Header Text Section */
+.contact-text.col-span-full {
+    grid-column: 1 / -1; /* Force span across all 12 columns */
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-text h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(3.5rem, 10vw, 6rem); /* Bigger, more aggressive heading */
+    text-transform: uppercase;
+    color: #e8e800; /* Neon Yellow */
+    line-height: 0.9;
+    margin-bottom: 20px;
+}
+
+.contact-text p {
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+/* 3. The Form Container */
+.contact-form.col-span-full {
+    grid-column: 1 / -1; /* Force span across all 12 columns */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the form block in the grid */
+    width: 100%;
+}
+
+/* 4. Form Elements (Inputs & Textarea) */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; 
+    max-width: 800px; /* This makes the form wider and more professional */
+    background: #111111;
+    border: 1px solid #1e1e1e;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    font-family: 'Figtree', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder Styling */
+.contact-form ::placeholder {
+    color: #555555;
+    opacity: 1;
+}
+
+/* Interaction States */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #e8e800;
+    background: #161616;
+    box-shadow: 0 0 15px rgba(232, 232, 0, 0.05);
+}
+
+/* 5. Honeypot Security Field (Hidden) */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/* 6. Send Button */
+#submit {
+    width: 100%;
+    max-width: 800px; /* Matches input width */
+    background: #e8e800;
+    color: #0a0a0a;
+    border: none;
+    border-radius: 100px;
+    padding: 22px;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 10px;
+}
+
+#submit:hover {
+    background: #ffffff;
+    transform: scale(1.02);
+}
+
+#submit:active {
+    transform: scale(0.98);
+}
+
+/* 7. Form Feedback (PHP/JS messages) */
+.form-feedback {
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    color: #e8e800;
+    background: rgba(232, 232, 0, 0.05);
+    border: 1px solid rgba(232, 232, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+}
+
+/* 8. Mobile Responsiveness */
+@media (max-width: 767px) {
+    .contact-page.grid-con {
+        padding: 40px 20px;
+    }
+
+    .contact-text h2 {
+        font-size: 3rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    #submit {
+        max-width: 100%; /* Spans full screen width on phones */
+        padding: 18px;
+    }
+}
