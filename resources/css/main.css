@@ -843,7 +843,7 @@ header.grid-con {
   font-family: "Figtree", sans-serif;
   font-size: 12px;
   font-weight: 700;
-  background: #e8e800;
+  background: red;
   color: #000;
   padding: 5px 14px;
   border-radius: 50px;
@@ -970,7 +970,7 @@ header.grid-con {
   text-transform: uppercase;
 }
 .ticker-track span.ticker-hi {
-  color: red;
+  color: #e8e800;
 }
 
 @keyframes ticker-scroll {
