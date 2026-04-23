@@ -2,6 +2,8 @@
 // TICKER
 // =====================
 
+@use '../abstracts/mixins' as *;
+
 .ticker-bar {
     background: #0f0f0f;
     border-top: 1px solid #1a1a1a;
