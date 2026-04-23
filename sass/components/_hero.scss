@@ -1,12 +1,15 @@
+@use '../abstracts/mixins' as *;
+
 // =====================
 // HERO
 // =====================
 
-@use '../abstracts/mixins' as *;
-
-#hero {
+.hero-wrap {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: #0a0a0a;
-    padding: 80px 0 60px;
     position: relative;
     overflow: hidden;
 
@@ -21,13 +24,24 @@
     }
 }
 
+#hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 80px 0 40px;
+
+    @media (max-width: 767px) {
+        padding: 48px 0 32px;
+    }
+}
+
 #hero .grid-con {
     position: relative;
     z-index: 1;
     align-items: center;
+    width: 100%;
 }
 
-// Availability indicator
 .hero-avail {
     display: flex;
     align-items: center;
@@ -42,6 +56,7 @@
     background: #e8e800;
     display: inline-block;
     position: relative;
+    flex-shrink: 0;
 
     &::after {
         content: '';
@@ -66,7 +81,6 @@
     letter-spacing: 0.05em;
 }
 
-// Heading
 .hero-title {
     font-family: 'Special Gothic Expanded One', sans-serif;
     font-size: 52px;
@@ -82,13 +96,16 @@
     @media (min-width: 1200px) {
         font-size: 72px;
     }
+
+    @media (max-width: 767px) {
+        font-size: 40px;
+    }
 }
 
 .hero-title .accent {
     color: #e8e800;
 }
 
-// Description
 .hero-desc {
     font-family: 'Figtree', sans-serif;
     font-size: 15px;
@@ -98,11 +115,14 @@
     margin-bottom: 32px;
 }
 
-// Buttons
 .hero-actions {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
 }
 
 .btn-primary {
@@ -115,6 +135,7 @@
     border-radius: 6px;
     text-decoration: none;
     transition: background 0.2s ease;
+    text-align: center;
 
     &:hover {
         background: #fff;
@@ -132,6 +153,7 @@
     border: 1px solid #2a2a2a;
     text-decoration: none;
     transition: border-color 0.2s ease, color 0.2s ease;
+    text-align: center;
 
     &:hover {
         border-color: #e8e800;
@@ -139,12 +161,13 @@
     }
 }
 
-// Photo
 .hero-img {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px 0 0;
+    position: relative;
+    z-index: 1;
 
     @media (min-width: 768px) {
         padding: 0;
@@ -190,24 +213,5 @@
         font-size: 12px;
         bottom: 24px;
         right: -20px;
-    }
-}
-
-@media (max-width: 767px) {
-    #hero {
-        padding: 48px 0 40px;
-    }
-
-    .hero-title {
-        font-size: 40px;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        text-align: center;
     }
 }

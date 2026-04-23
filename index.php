@@ -73,55 +73,56 @@ $projects = $db->query('SELECT * FROM projects WHERE is_deleted = 0 ORDER BY cre
 </div>
 
 
-<section id="hero">
-    <div class="grid-con">
+<div class="hero-wrap">
+    <section id="hero">
+        <div class="grid-con">
 
-        <div class="hero-body col-span-4 m-col-start-1 m-col-end-7 l-col-start-1 l-col-end-6">
-            <div class="hero-avail">
-                <span class="hero-dot"></span>
-                <span class="hero-avail-text">Available for work</span>
+            <div class="hero-body col-span-4 m-col-start-1 m-col-end-7 l-col-start-1 l-col-end-6">
+                <div class="hero-avail">
+                    <span class="hero-dot"></span>
+                    <span class="hero-avail-text">Available for work</span>
+                </div>
+                <h1 class="hero-title">
+                    I'm <span class="accent">Kingsley<br>Watson.</span>
+                </h1>
+                <p class="hero-desc">
+                    Motion & Graphic Designer based in Canada. Graduating Fanshawe College, April 2026.
+                </p>
+                <div class="hero-actions">
+                    <a href="#featured-work" class="btn-primary">View My Work</a>
+                    <a href="images/watson_kingsley_resume.pdf" class="btn-secondary" download>Download CV</a>
+                </div>
             </div>
-            <h1 class="hero-title">
-                I'm <span class="accent">Kingsley<br>Watson.</span>
-            </h1>
-            <p class="hero-desc">
-                Motion & Graphic Designer based in Canada. Graduating Fanshawe College, April 2026.
-            </p>
-            <div class="hero-actions">
-                <a href="#featured-work" class="btn-primary">View My Work</a>
-                <a href="images/watson_kingsley_resume.pdf" class="btn-secondary" download>Download CV</a>
+
+            <div class="hero-img col-span-4 m-col-start-7 m-col-end-13 l-col-start-7 l-col-end-13">
+                <div class="photo-wrapper">
+                    <img src="images/pic-of-me-f.png" alt="Kingsley Watson" class="profile-photo"/>
+                    <div class="badge-circle">Available<br/>for Work</div>
+                </div>
             </div>
+
         </div>
+    </section>
 
-        <div class="hero-img col-span-4 m-col-start-7 m-col-end-13 l-col-start-7 l-col-end-13">
-            <div class="photo-wrapper">
-                <img src="images/pic-of-me-f.png" alt="Kingsley Watson" class="profile-photo"/>
-                <div class="badge-circle">Available<br/>for Work</div>
-            </div>
+    <div class="ticker-bar">
+        <div class="ticker-track">
+            <span class="ticker-hi">✦ Graphic Design</span>
+            <span>✦ Branding</span>
+            <span class="ticker-hi">✦ Motion Design</span>
+            <span>✦ Marketing</span>
+            <span class="ticker-hi">✦ Graphic Design</span>
+            <span>✦ Branding</span>
+            <span class="ticker-hi">✦ Motion Design</span>
+            <span>✦ Marketing</span>
+            <span class="ticker-hi">✦ Graphic Design</span>
+            <span>✦ Branding</span>
+            <span class="ticker-hi">✦ Motion Design</span>
+            <span>✦ Marketing</span>
+            <span class="ticker-hi">✦ Graphic Design</span>
+            <span>✦ Branding</span>
+            <span class="ticker-hi">✦ Motion Design</span>
+            <span>✦ Marketing</span>
         </div>
-
-    </div>
-</section>
-
-
-<div class="ticker-bar">
-    <div class="ticker-track">
-        <span class="ticker-hi">✦ Graphic Design</span>
-        <span>✦ Branding</span>
-        <span class="ticker-hi">✦ Motion Design</span>
-        <span>✦ Marketing</span>
-        <span class="ticker-hi">✦ Graphic Design</span>
-        <span>✦ Branding</span>
-        <span class="ticker-hi">✦ Motion Design</span>
-        <span>✦ Marketing</span>
-        <span class="ticker-hi">✦ Graphic Design</span>
-        <span>✦ Branding</span>
-        <span class="ticker-hi">✦ Motion Design</span>
-        <span>✦ Marketing</span>
-        <span class="ticker-hi">✦ Graphic Design</span>
-        <span>✦ Branding</span>
-        <span class="ticker-hi">✦ Motion Design</span>
-        <span>✦ Marketing</span>
     </div>
 </div>
 
