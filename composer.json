@@ -1,0 +1,20 @@
+{
+    "name": "watso/watson-kingsley-portfolio",
+    "description": "this is my portfolio",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Portfolio\\": "includes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nicholas Ireland"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+    
+}

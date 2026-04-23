@@ -2,6 +2,8 @@
 // SOFTWARE SKILLS
 // =====================
 
+@use '../abstracts/mixins' as *;
+
 #how2use {
     background: #0a0a0a;
     padding: 80px 0;
