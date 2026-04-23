@@ -1,0 +1,36 @@
+// =====================
+// TICKER
+// =====================
+
+.ticker-bar {
+    background: #0f0f0f;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-track {
+    display: inline-flex;
+    gap: 40px;
+    animation: ticker-scroll 20s linear infinite;
+
+    span {
+        font-family: 'Figtree', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: #2a2a2a;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    span.ticker-hi {
+        color: #e8e800;
+    }
+}
+
+@keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}

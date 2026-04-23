@@ -1,175 +1,99 @@
+// =====================
+// SOFTWARE SKILLS
+// =====================
+
 #how2use {
     background: #0a0a0a;
-    padding: 0px;
+    padding: 80px 0;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid #1a1a1a;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        opacity: 0.4;
+        z-index: 0;
+    }
 }
 
-#how2use::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    opacity: 0.4;
-    z-index: 0;
+#how2use .grid-con {
+    position: relative;
+    z-index: 1;
+    row-gap: 20px;
 }
 
 .howto-header {
-    margin-bottom: 30px;
-}
-
-#how2use .section-label {
-    color: yellow;
-    margin-top: 100px;
-    margin-bottom: 80px;
-    font-size: 14px;
-}
-
-#how2use .section-title {
-    color: white;
+    margin-bottom: 8px;
 }
 
 .howto-step {
-    border: 1.5px solid rgb(32, 32, 32);
+    background: #111;
+    border: 1px solid #1e1e1e;
     border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 25px;
+    padding: 24px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-}
+    gap: 12px;
+    transition: border-color 0.2s ease, background 0.2s ease;
 
-.howto-step:hover {
-    border-color: yellow;
+    &:hover {
+        border-color: #e8e800;
+        background: #141414;
+    }
 }
 
 .howto-step img {
-    width: 70px;
-    height: 70px;
+    width: 52px;
+    height: 52px;
     object-fit: contain;
-    margin-bottom: 5px;
 }
 
 .howto-step h3 {
-    font-family: "Figtree", sans-serif;
-    font-size: 16px;
-    color: yellow;
-    margin: 0;
-}
-
-.howto-step p {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    line-height: 1.5;
-    color: white;
-    margin: 0;
-}
-
-.code-block {
-    background: rgb(12, 12, 12);
-    border: 1.5px solid rgb(32, 32, 32);
-    border-radius: 12px;
-    padding: 24px 24px;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.code-block-label {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: yellow;
-}
-
-.code-block pre {
-    margin: 0;
-}
-
-.code-block code {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.85rem;
-    line-height: 1.8;
-    color: white;
-}
-
-.howtobox {
-    border: 1.5px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-top: 20px;
-}
-
-.howtobox h4 {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: yellow;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-}
-
-.howtobox-row {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    padding-bottom: 10px;
-}
-
-.howtobox-row:last-child {
-    border-bottom: none;
-}
-
-.howtobox-name {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Figtree', sans-serif;
     font-size: 13px;
-    color: yellow;
-    min-width: 110px;
-}
-
-.howtobox-desc {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    color: white;
-    line-height: 1.5;
+    font-weight: 700;
+    color: #e8e800;
+    margin: 0;
 }
 
 .howto-load-more {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 60px;
+    margin-top: 12px;
+    margin-bottom: 20px;
 }
 
 #load-more-btn {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Figtree', sans-serif;
     font-size: 14px;
-    color: yellow;
+    font-weight: 700;
+    color: #e8e800;
     background: transparent;
-    border: 1.5px solid yellow;
+    border: 1px solid #e8e800;
     border-radius: 8px;
-    padding: 12px 32px;
+    padding: 12px 36px;
     cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background: #e8e800;
+        color: #0a0a0a;
+    }
 }
 
-#load-more-btn:hover {
-    background: yellow;
-    color: #0a0a0a;
-}
-
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
     #how2use {
-        padding: 0;
+        padding: 48px 0;
     }
 
     .howto-step {
-        margin-bottom: 16px;
-    }
-
-    .howtobox {
-        margin-top: 16px;
+        padding: 20px 12px;
     }
 }

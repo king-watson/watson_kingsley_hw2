@@ -1,0 +1,141 @@
+// =====================
+// CONTACT
+// =====================
+
+.contact-cta {
+    @include noise-bg;
+    background: #0a0a0a;
+    border-top: 1px solid #1a1a1a;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-inner {
+    display: flex;
+    align-items: stretch;
+    min-height: 320px;
+    border-left: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+}
+
+.contact-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 60px 48px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-pill {
+    font-family: 'Figtree', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    background: #e8e800;
+    color: #000;
+    padding: 5px 14px;
+    border-radius: 50px;
+    width: fit-content;
+}
+
+.contact-heading {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 52px;
+    color: #fff;
+    line-height: 1.05;
+    text-transform: uppercase;
+
+    @media (min-width: 1200px) {
+        font-size: 64px;
+    }
+}
+
+.contact-sub {
+    font-family: 'Figtree', sans-serif;
+    font-size: 15px;
+    color: #555;
+}
+
+.contact-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.contact-tag {
+    font-family: 'Figtree', sans-serif;
+    font-size: 12px;
+    color: #555;
+    border: 1px solid #2a2a2a;
+    padding: 6px 14px;
+    border-radius: 50px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        border-color: #e8e800;
+        color: #e8e800;
+    }
+}
+
+.contact-right {
+    width: 220px;
+    flex-shrink: 0;
+    background: #e8e800;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+
+    &:hover {
+        background: #fff;
+    }
+}
+
+.contact-arrow {
+    font-size: 44px;
+    color: #000;
+    font-weight: 900;
+    transition: transform 0.2s ease;
+
+    .contact-right:hover & {
+        transform: translateX(4px);
+    }
+}
+
+.contact-cta-text {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+@media (max-width: 767px) {
+    .contact-inner {
+        flex-direction: column;
+        min-height: unset;
+    }
+
+    .contact-text {
+        padding: 40px 24px;
+    }
+
+    .contact-right {
+        width: 100%;
+        padding: 32px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .contact-heading {
+        font-size: 36px;
+    }
+}
