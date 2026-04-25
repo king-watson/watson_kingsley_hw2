@@ -3,15 +3,14 @@
 // =====================
 // HERO
 // =====================
-
 .hero-wrap {
-    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: #0a0a0a;
     position: relative;
     overflow: hidden;
+       height: calc(100dvh - 0px);
 
     &::before {
         content: '';

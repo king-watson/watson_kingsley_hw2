@@ -143,13 +143,16 @@ header.grid-con {
   background: #fff;
 }
 
-#hero {
+.hero-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #0a0a0a;
-  padding: 80px 0 60px;
   position: relative;
   overflow: hidden;
+  height: calc(100dvh - 0px);
 }
-#hero::before {
+.hero-wrap::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -159,10 +162,23 @@ header.grid-con {
   z-index: 0;
 }
 
+#hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 80px 0 40px;
+}
+@media (max-width: 767px) {
+  #hero {
+    padding: 48px 0 32px;
+  }
+}
+
 #hero .grid-con {
   position: relative;
   z-index: 1;
   align-items: center;
+  width: 100%;
 }
 
 .hero-avail {
@@ -179,6 +195,7 @@ header.grid-con {
   background: #e8e800;
   display: inline-block;
   position: relative;
+  flex-shrink: 0;
 }
 .hero-dot::after {
   content: "";
@@ -225,6 +242,11 @@ header.grid-con {
     font-size: 72px;
   }
 }
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 40px;
+  }
+}
 
 .hero-title .accent {
   color: #e8e800;
@@ -244,6 +266,11 @@ header.grid-con {
   gap: 12px;
   flex-wrap: wrap;
 }
+@media (max-width: 767px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+}
 
 .btn-primary {
   font-family: "Figtree", sans-serif;
@@ -255,6 +282,7 @@ header.grid-con {
   border-radius: 6px;
   text-decoration: none;
   transition: background 0.2s ease;
+  text-align: center;
 }
 .btn-primary:hover {
   background: #fff;
@@ -271,6 +299,7 @@ header.grid-con {
   border: 1px solid #2a2a2a;
   text-decoration: none;
   transition: border-color 0.2s ease, color 0.2s ease;
+  text-align: center;
 }
 .btn-secondary:hover {
   border-color: #e8e800;
@@ -282,6 +311,8 @@ header.grid-con {
   justify-content: center;
   align-items: center;
   padding: 40px 0 0;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .hero-img {
@@ -333,21 +364,6 @@ header.grid-con {
   }
 }
 
-@media (max-width: 767px) {
-  #hero {
-    padding: 48px 0 40px;
-  }
-  .hero-title {
-    font-size: 40px;
-  }
-  .hero-actions {
-    flex-direction: column;
-  }
-  .btn-primary,
-  .btn-secondary {
-    text-align: center;
-  }
-}
 #overview {
   background: #0a0a0a;
   padding: 80px 0;
@@ -936,6 +952,8 @@ header.grid-con {
   padding: 14px 0;
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
 .ticker-track {
@@ -952,7 +970,7 @@ header.grid-con {
   text-transform: uppercase;
 }
 .ticker-track span.ticker-hi {
-  color: #e8e800;
+  color: red;
 }
 
 @keyframes ticker-scroll {
