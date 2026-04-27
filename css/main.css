@@ -150,7 +150,11 @@ header.grid-con {
   background: #0a0a0a;
   position: relative;
   overflow: hidden;
-  height: calc(100dvh - 0px);
+}
+@media (min-width: 767px) {
+  .hero-wrap {
+    height: calc(100dvh - 73px);
+  }
 }
 .hero-wrap::before {
   content: "";
@@ -970,7 +974,7 @@ header.grid-con {
   text-transform: uppercase;
 }
 .ticker-track span.ticker-hi {
-  color: red;
+  color: yellow;
 }
 
 @keyframes ticker-scroll {

@@ -19,6 +19,9 @@ $problem       = $project['problem'] ?? '';
 $result        = $project['result'] ?? '';
 $banner_image  = $project['banner_image'] ?? '';
 $video_src     = $project['video_src'] ?? '';
+$video_src_2   = $project['video_src_2'] ?? '';
+$video_src_3   = $project['video_src_3'] ?? '';
+$video_src_4   = $project['video_src_4'] ?? '';
 
 $tag_items  = !empty($project['tag']) ? explode('|', $project['tag']) : [];
 $goal_items = !empty($project['goal']) ? explode('|', $project['goal']) : [];
@@ -84,11 +87,7 @@ $deep_dives = array_filter([
 
 <main>
 
-  <section class="seven-hero grid-con">
-    <div class="seven-hero-image col-span-4 m-col-start-1 m-col-end-13 l-col-start-1 l-col-end-13">
-      <img src="<?php echo $banner_image; ?>" alt="<?php echo $title; ?> Hero Image" class="seven-hero-img">
-    </div>
-  </section>
+  
 
   <section class="seven-overview grid-con">
     <article class="seven-overview-text col-span-4 m-col-start-1 m-col-end-13 l-col-start-1 l-col-end-13">
@@ -175,16 +174,20 @@ $deep_dives = array_filter([
   </section>
   <?php endif; ?>
 
-  <?php if (!empty($video_src)): ?>
-  <section class="seven-video grid-con">
-    <div class="seven-video-wrapper col-span-4 m-col-start-1 m-col-end-13 l-col-start-1 l-col-end-13">
-      <video controls class="seven-video-element">
-        <source src="<?php echo $video_src; ?>" type="<?php echo str_ends_with($video_src, '.webm') ? 'video/webm' : 'video/mp4'; ?>">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </section>
-  <?php endif; ?>
+ <?php 
+$all_videos = array_filter([$video_src, $video_src_2, $video_src_3, $video_src_4]);
+if (!empty($all_videos)): ?>
+<section class="seven-video grid-con">
+  <?php foreach ($all_videos as $vid): ?>
+  <div class="seven-video-wrapper col-span-4 m-col-start-1 m-col-end-13 l-col-start-1 l-col-end-13">
+    <video controls class="seven-video-element">
+      <source src="<?php echo $vid; ?>" type="<?php echo str_ends_with($vid, '.webm') ? 'video/webm' : 'video/mp4'; ?>">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <?php endforeach; ?>
+</section>
+<?php endif; ?>
 
 </main>
 
