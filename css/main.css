@@ -753,8 +753,11 @@ header.grid-con {
   background: #0a0a0a;
   padding: 80px 0;
   position: relative;
+  z-index: 1;
   overflow: hidden;
   border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  row-gap: 24px;
 }
 .hero-video::before {
   content: "";
@@ -764,12 +767,6 @@ header.grid-con {
   pointer-events: none;
   opacity: 0.4;
   z-index: 0;
-}
-
-.hero-video .grid-con {
-  position: relative;
-  z-index: 1;
-  row-gap: 24px;
 }
 
 .hero-video .section-label {
@@ -792,7 +789,7 @@ header.grid-con {
   transition: border-color 0.3s ease;
 }
 .video-container:hover {
-  border-color: #e8e800;
+  border-color: yellow;
 }
 
 .video-container video {
