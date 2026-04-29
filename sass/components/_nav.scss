@@ -1,6 +1,6 @@
-// =====================
-// HEADER & NAV
-// =====================
+/* =====================
+   HEADER & NAV 
+   ===================== */
 
 .full-width-header {
     position: sticky;
@@ -11,14 +11,11 @@
 }
 
 header.grid-con {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding-top: 18px;
     padding-bottom: 18px;
-}
-
-#header-logo {
-    display: flex;
-    align-items: center;
 }
 
 #header-logo .logo {
@@ -27,106 +24,20 @@ header.grid-con {
     color: #fff;
     text-decoration: none;
     letter-spacing: 0.05em;
-    transition: color 0.2s ease;
-
-    &:hover {
-        color: #e8e800;
-    }
 }
 
 #hamburger {
     background: transparent;
     border: none;
     color: #fff;
-    font-size: 22px;
+    font-size: 24px;
     cursor: pointer;
-    justify-self: end;
-
-    @media (min-width: 768px) {
-        display: none;
-    }
+    display: block;
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: #0a0a0a;
-    z-index: 200;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    &.active {
-        display: flex;
-    }
-
-    @media (min-width: 768px) {
-        display: flex;
-        position: static;
-        background: transparent;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        inset: unset;
-        z-index: auto;
-    }
-}
-
-#close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-
-    @media (min-width: 768px) {
-        display: none;
-    }
-}
-
-#menu ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    padding: 0;
-    margin: 0;
-
-    @media (min-width: 768px) {
-        flex-direction: row;
-        gap: 28px;
-    }
-}
-
-#menu ul li a {
-    font-family: 'Figtree', sans-serif;
-    font-size: 28px;
-    color: #888;
-    text-decoration: none;
-    transition: color 0.2s ease;
-
-    &:hover {
-        color: #e8e800;
-    }
-
-    @media (min-width: 768px) {
-        font-size: 13px;
-    }
-}
-
+/* Header Button: Hidden on mobile by default */
 .nav-cta {
     display: none;
-
-    @media (min-width: 768px) {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
 }
 
 .btn-contact {
@@ -139,9 +50,129 @@ header.grid-con {
     padding: 10px 22px;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
+}
 
-    &:hover {
-        background: #fff;
+.btn-contact:hover {
+    background: #fff;
+}
+
+/* =====================
+   MOBILE OVERLAY
+   ===================== */
+
+.overlay {
+    display: none; 
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.98);
+    z-index: 200;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.overlay.active {
+    display: flex;
+}
+
+#close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: #e8e800;
+    color: #000;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    counter-reset: menu-counter;
+}
+
+/* Mobile Typography (Big & Bold) */
+#menu ul li a {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#menu ul li a::before {
+    counter-increment: menu-counter;
+    content: "0" counter(menu-counter);
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #e8e800;
+}
+
+/* =====================
+   DESKTOP / TABLET FIX
+   ===================== */
+
+@media (min-width: 768px) {
+    #hamburger, #close {
+        display: none;
     }
+
+    .nav-cta {
+        display: block;
+    }
+
+    .overlay {
+        display: flex !important; /* Shows links on desktop */
+        position: static;         /* Removes fixed overlay behavior */
+        background: transparent;
+        flex-direction: row;
+        inset: unset;
+        z-index: auto;
+        backdrop-filter: none;
+        width: auto;
+    }
+
+    #menu ul {
+        flex-direction: row;
+        gap: 28px;
+    }
+
+    /* Desktop Typography (Small & Clean) */
+    #menu ul li a {
+        font-family: 'Figtree', sans-serif;
+        font-size: 14px;
+        text-transform: none;
+        color: #888;
+    }
+
+    #menu ul li a:hover {
+        color: #e8e800;
+    }
+
+    #menu ul li a::before,
+    .mobile-contact {
+        display: none; /* Hide numbers and the extra contact link on desktop */
+    }
+}
+
+body.no-scroll {
+    overflow: hidden;
 }

@@ -55,10 +55,22 @@ $projects = $db->query('SELECT * FROM projects WHERE is_deleted = 0 ORDER BY cre
                     <li><a href="#featured-work">Projects</a></li>
                     <li><a href="#overview">About Me</a></li>
                     <li><a href="#how2use">Skills</a></li>
+                    
+                    <!-- Mobile-Only Link -->
+                    <!-- Inside your overlay menu -->
+<li class="mobile-contact">
+    <?php if (isset($_SESSION['logged_in_user'])): ?>
+        <a href="/watson-kingsley-portfolio/logout.php">Logout</a>
+    <?php else: ?>
+        <!-- Ensure there is NO # before contact.php -->
+        <a href="contact.php">Contact</a>
+    <?php endif; ?>
+</li>
                 </ul>
             </nav>
         </div>
 
+        <!-- Desktop-Only Button -->
         <div class="nav-cta m-col-start-11 m-col-end-13 l-col-start-11 l-col-end-13">
             <?php if (isset($_SESSION['logged_in_user'])): ?>
                 <a href="/watson-kingsley-portfolio/logout.php"><button class="btn-contact">Logout</button></a>
