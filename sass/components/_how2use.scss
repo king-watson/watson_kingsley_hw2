@@ -1,92 +1,111 @@
 // =====================
-// SOFTWARE SKILLS
+// SKILLS
 // =====================
 
-@use '../abstracts/mixins' as *;
-
 #how2use {
-    background: #0a0a0a;
     padding: 80px 0;
-    position: relative;
-    overflow: hidden;
-    border-top: 1px solid #1a1a1a;
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-        pointer-events: none;
-        opacity: 0.4;
-        z-index: 0;
+    .section-label {
+        font-family: 'Figtree', sans-serif;
+        color: #e8e800;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 12px;
+        letter-spacing: 0.08em;
+    }
+
+    .section-title {
+        font-family: 'Special Gothic Expanded One', sans-serif;
+        margin-bottom: 32px;
     }
 }
 
-#how2use .grid-con {
-    position: relative;
-    z-index: 1;
-    row-gap: 20px;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.howto-header {
-    margin-bottom: 8px;
-}
-
-.howto-step {
-    background: #111;
+.skill-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px;
+    background: #0f0f0f;
     border: 1px solid #1e1e1e;
     border-radius: 12px;
-    padding: 24px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 12px;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: border-color 0.25s ease, background 0.25s ease;
 
     &:hover {
         border-color: #e8e800;
-        background: #141414;
+        background: #111;
     }
 }
 
-.howto-step img {
-    width: 52px;
-    height: 52px;
-    object-fit: contain;
+.skill-card__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #0a0a0a;
+    border: 1px solid #e8e800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 11px;
+    color: #e8e800;
+    flex-shrink: 0;
 }
 
-.howto-step h3 {
-    font-family: 'Figtree', sans-serif;
+.skill-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+}
+
+.skill-card__name {
+    font-family: 'Special Gothic Expanded One', sans-serif;
     font-size: 13px;
-    font-weight: 700;
-    color: #e8e800;
-    margin: 0;
+    color: #fff;
+}
+
+.skill-card__desc {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+    line-height: 1.5;
 }
 
 .howto-load-more {
     display: flex;
     justify-content: center;
-    margin-top: 12px;
-    margin-bottom: 20px;
-}
+    margin-top: 32px;
 
-#load-more-btn {
-    font-family: 'Figtree', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: #e8e800;
-    background: transparent;
-    border: 1px solid #e8e800;
-    border-radius: 8px;
-    padding: 12px 36px;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
+    button {
+        font-family: 'Figtree', sans-serif;
+        font-size: 13px;
+        color: #e8e800;
+        background: transparent;
+        border: 1px solid #e8e800;
+        border-radius: 20px;
+        padding: 10px 28px;
+        cursor: pointer;
+        letter-spacing: 0.04em;
+        transition: background 0.2s ease, color 0.2s ease;
 
-    &:hover {
-        background: #e8e800;
-        color: #0a0a0a;
+        &:hover {
+            background: #e8e800;
+            color: #0a0a0a;
+        }
     }
 }
 
@@ -95,7 +114,7 @@
         padding: 48px 0;
     }
 
-    .howto-step {
-        padding: 20px 12px;
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 }

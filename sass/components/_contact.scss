@@ -1,136 +1,140 @@
-@use '../abstracts/mixins' as *;
+// =====================
+// CONTACT CTA
+// =====================
 
 .contact-cta {
-    @include noise-bg;
-    background: #0a0a0a;
+    padding: 80px 0;
     border-top: 1px solid #1a1a1a;
-    width: 100%;
 }
 
 .contact-inner {
-    display: flex;
-    align-items: stretch;
-    min-height: 320px;
-    width: 100%;
-    position: relative;
-    z-index: 1;
+    row-gap: 0;
 }
 
-.contact-text {
-    flex: 1;
+.contact-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.contact-badge {
+    background: #e8e800;
+    border-radius: 10px;
+    padding: 28px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-    padding: 60px 80px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    text-decoration: none;
+    flex-shrink: 0;
+    min-height: 180px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    margin-top: 30px;
+
+    &:hover {
+        background: #fff;
+        transform: scale(1.05);
+    }
 }
 
-.contact-pill {
-    font-family: 'Figtree', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    background: #e8e800;
-    color: #000;
-    padding: 5px 14px;
-    border-radius: 50px;
-    width: fit-content;
+.contact-badge__arrow {
+    font-size: 22px;
+    color: #0a0a0a;
+    line-height: 1;
+}
+
+.contact-badge__label {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 10px;
+    color: #0a0a0a;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    .section-label {
+        font-family: 'Figtree', sans-serif;
+        color: #e8e800;
+        font-size: 12px;
+        display: block;
+        letter-spacing: 0.08em;
+    }
 }
 
 .contact-heading {
     font-family: 'Special Gothic Expanded One', sans-serif;
-    font-size: 64px;
+    font-size: clamp(32px, 5vw, 56px);
     color: #fff;
     line-height: 1.05;
-    text-transform: uppercase;
-
-    @media (min-width: 1200px) {
-        font-size: 80px;
-    }
 }
 
 .contact-sub {
     font-family: 'Figtree', sans-serif;
-    font-size: 15px;
-    color: #555;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.6;
 }
 
 .contact-tags {
     display: flex;
+    align-items: center;
     gap: 8px;
     flex-wrap: wrap;
-    margin-top: 4px;
+    margin-top: 8px;
 }
 
 .contact-tag {
     font-family: 'Figtree', sans-serif;
-    font-size: 12px;
-    color: #555;
-    border: 1px solid #2a2a2a;
-    padding: 6px 14px;
-    border-radius: 50px;
-    transition: border-color 0.2s ease, color 0.2s ease;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.04em;
 
-    &:hover {
-        border-color: #e8e800;
+    &.accent {
         color: #e8e800;
     }
 }
 
-.contact-right {
-    width: 280px;
-    flex-shrink: 0;
-    background: #e8e800;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    text-decoration: none;
-    transition: background 0.2s ease;
-
-    &:hover {
-        background: #fff;
-    }
-}
-
-.contact-arrow {
-    font-size: 44px;
-    color: #000;
-    font-weight: 900;
-    transition: transform 0.2s ease;
-}
-
-.contact-right:hover .contact-arrow {
-    transform: translateX(6px);
-}
-
-.contact-cta-text {
-    font-family: 'Figtree', sans-serif;
+.contact-divider {
+    color: rgba(255, 255, 255, 0.2);
     font-size: 11px;
-    font-weight: 900;
-    color: #000;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
 }
 
 @media (max-width: 767px) {
-    .contact-inner {
+    .contact-cta {
+        padding: 48px 0;
+    }
+
+    .contact-wrap {
         flex-direction: column;
-        min-height: unset;
+        align-items: flex-start;
+        gap: 24px;
     }
 
-    .contact-text {
-        padding: 40px 24px;
-    }
-
-    .contact-right {
+    .contact-badge {
         width: 100%;
-        padding: 32px;
+        min-height: auto;
         flex-direction: row;
-        gap: 16px;
+        justify-content: center;
+        padding: 16px 24px;
+        gap: 12px;
+    }
+
+    .contact-badge__label {
+        writing-mode: horizontal-tb;
+        transform: none;
     }
 
     .contact-heading {
-        font-size: 40px;
+        font-size: 32px;
     }
 }
