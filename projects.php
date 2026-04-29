@@ -67,13 +67,23 @@ $deep_dives = array_filter([
             <button id="close">&#10005;</button>
             <nav id="menu">
                 <ul>
-                    <li><a href="#featured-work">Projects</a></li>
-                    <li><a href="#overview">About Me</a></li>
-                    <li><a href="#how2use">Skills</a></li>
+                    <li><a href="index.php#featured-work">Projects</a></li>
+                    <li><a href="index.php#overview">About Me</a></li>
+                    <li><a href="index.php#how2use">Skills</a></li>
+                    
+                    <!-- Mobile-Only Link (Hidden on desktop via CSS) -->
+                    <li class="mobile-contact">
+                        <?php if (isset($_SESSION['logged_in_user'])): ?>
+                            <a href="/watson-kingsley-portfolio/logout.php">Logout</a>
+                        <?php else: ?>
+                            <a href="contact.php">Contact</a>
+                        <?php endif; ?>
+                    </li>
                 </ul>
             </nav>
         </div>
 
+        <!-- Desktop-Only Button (Hidden on mobile via CSS) -->
         <div class="nav-cta m-col-start-11 m-col-end-13 l-col-start-11 l-col-end-13">
             <?php if (isset($_SESSION['logged_in_user'])): ?>
                 <a href="/watson-kingsley-portfolio/logout.php"><button class="btn-contact">Logout</button></a>
