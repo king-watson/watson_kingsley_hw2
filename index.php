@@ -125,110 +125,113 @@ $projects = $db->query('SELECT * FROM projects WHERE is_deleted = 0 ORDER BY cre
 </div>
 
 
-<section class="featured-work grid-con" id="featured-work">
+<section class="featured-work" id="featured-work">
+<div class="grid-con">
 
-    <div class="featured-header col-span-full m-col-start-1 m-col-end-12 l-col-start-1 l-col-end-12">
-        <span class="section-label">02 / Featured Projects</span>
-        <h2 class="featured-heading">My Work</h2>
-        <p class="featured-subtext">Hover to see more</p>
-    </div>
+<div class="featured-header col-span-full m-col-start-1 m-col-end-12 l-col-start-1 l-col-end-12">
+<span class="section-label">02 / Featured Projects</span>
+<h2 class="featured-heading">My Work</h2>
+<p class="featured-subtext">Hover to see more</p>
+</div>
 
-    <?php if (isset($_SESSION['logged_in_user'])): ?>
-    <div class="col-span-full admin-add-form">
-        <h3 class="admin-add-form-title">Add New Project</h3>
+<?php if (isset($_SESSION['logged_in_user'])): ?>
+<div class="col-span-full admin-add-form">
+<h3 class="admin-add-form-title">Add New Project</h3>
 
-        <?php if (!empty($_SESSION['error_messages'])): ?>
-            <?php foreach ($_SESSION['error_messages'] as $error): ?>
-                <p class="admin-error-message"><?= $error ?></p>
-            <?php endforeach; ?>
-        <?php endif; ?>
+<?php if (!empty($_SESSION['error_messages'])): ?>
+<?php foreach ($_SESSION['error_messages'] as $error): ?>
+<p class="admin-error-message"><?= $error ?></p>
+<?php endforeach; ?>
+<?php endif; ?>
 
-        <form method="POST" action="/watson-kingsley-portfolio/includes/scripts/projects.php">
-            <input type="hidden" name="action" value="insert">
-            <div class="admin-form-group">
-                <label class="admin-form-label">Title</label>
-                <input type="text" name="title" class="admin-form-input" />
-            </div>
-            <div class="admin-form-group">
-                <label class="admin-form-label">Description</label>
-                <textarea name="description" class="admin-form-textarea"></textarea>
-            </div>
-            <div class="admin-form-group">
-                <label class="admin-form-label">Image URL</label>
-                <input type="text" name="image" class="admin-form-input" />
-            </div>
-            <div class="admin-form-group">
-                <label class="admin-form-label">Project Link</label>
-                <input type="text" name="link" class="admin-form-input" />
-            </div>
-            <div class="admin-form-group">
-                <label class="admin-form-label">Tag</label>
-                <input type="text" name="tag" class="admin-form-input" />
-            </div>
-            <button type="submit" class="admin-form-submit">Add Project</button>
-        </form>
-    </div>
-    <?php endif; ?>
+<form method="POST" action="/watson-kingsley-portfolio/includes/scripts/projects.php">
+<input type="hidden" name="action" value="insert">
+<div class="admin-form-group">
+<label class="admin-form-label">Title</label>
+<input type="text" name="title" class="admin-form-input" />
+</div>
+<div class="admin-form-group">
+<label class="admin-form-label">Description</label>
+<textarea name="description" class="admin-form-textarea"></textarea>
+</div>
+<div class="admin-form-group">
+<label class="admin-form-label">Image URL</label>
+<input type="text" name="image" class="admin-form-input" />
+</div>
+<div class="admin-form-group">
+<label class="admin-form-label">Project Link</label>
+<input type="text" name="link" class="admin-form-input" />
+</div>
+<div class="admin-form-group">
+<label class="admin-form-label">Tag</label>
+<input type="text" name="tag" class="admin-form-input" />
+</div>
+<button type="submit" class="admin-form-submit">Add Project</button>
+</form>
+</div>
+<?php endif; ?>
 
-    <div class="work-inner col-span-full l-col-start-1 l-col-end-13">
+<div class="work-inner col-span-full l-col-start-1 l-col-end-13">
 
-        <?php foreach ($projects as $project): ?>
-            <?php $tag = explode('|', $project['tag'])[0]; ?>
-            <div class="work-box">
-                <img src="<?= $project['image'] ?>" alt="<?= $project['title'] ?>" class="work-img">
-                <div class="work-overlay">
-                    <span class="work-tag"><?= $tag ?></span>
-                    <h3 class="work-title"><?= $project['title'] ?></h3>
-                    <p class="work-desc"><?= $project['description'] ?></p>
-                    <a href="<?= $project['link'] ?>" class="work-btn">View Project &#8599;</a>
-                </div>
+<?php foreach ($projects as $project): ?>
+<?php $tag = explode('|', $project['tag'])[0]; ?>
+<div class="work-box">
+<img src="<?= $project['image'] ?>" alt="<?= $project['title'] ?>" class="work-img">
+<div class="work-overlay">
+<span class="work-tag"><?= $tag ?></span>
+<h3 class="work-title"><?= $project['title'] ?></h3>
+<p class="work-desc"><?= $project['description'] ?></p>
+<a href="<?= $project['link'] ?>" class="work-btn">View Project &#8599;</a>
+</div>
 
-                <?php if (isset($_SESSION['logged_in_user'])): ?>
-                <div class="admin-project-controls">
+<?php if (isset($_SESSION['logged_in_user'])): ?>
+<div class="admin-project-controls">
 
-                    <form method="POST" action="/watson-kingsley-portfolio/includes/scripts/projects.php">
-                        <input type="hidden" name="action" value="update">
-                        <input type="hidden" name="id" value="<?= $project['id'] ?>">
-                        <div class="admin-form-group">
-                            <label class="admin-form-label">Title</label>
-                            <input type="text" name="title" value="<?= $project['title'] ?>" class="admin-form-input" />
-                        </div>
-                        <div class="admin-form-group">
-                            <label class="admin-form-label">Description</label>
-                            <textarea name="description" class="admin-form-textarea"><?= $project['description'] ?></textarea>
-                        </div>
-                        <div class="admin-form-group">
-                            <label class="admin-form-label">Image URL</label>
-                            <input type="text" name="image" value="<?= $project['image'] ?>" class="admin-form-input" />
-                        </div>
-                        <div class="admin-form-group">
-                            <label class="admin-form-label">Project Link</label>
-                            <input type="text" name="link" value="<?= $project['link'] ?>" class="admin-form-input" />
-                        </div>
-                        <div class="admin-form-group">
-                            <label class="admin-form-label">Tag</label>
-                            <input type="text" name="tag" value="<?= $project['tag'] ?>" class="admin-form-input" />
-                        </div>
-                        <div class="admin-control-buttons">
-                            <button type="submit" class="admin-btn-update">Update Project</button>
-                        </div>
-                    </form>
+<form method="POST" action="/watson-kingsley-portfolio/includes/scripts/projects.php">
+<input type="hidden" name="action" value="update">
+<input type="hidden" name="id" value="<?= $project['id'] ?>">
+<div class="admin-form-group">
+<label class="admin-form-label">Title</label>
+<input type="text" name="title" value="<?= $project['title'] ?>" class="admin-form-input" />
+</div>
+<div class="admin-form-group">
+<label class="admin-form-label">Description</label>
+<textarea name="description" class="admin-form-textarea"><?= $project['description'] ?></textarea>
+</div>
+<div class="admin-form-group">
+<label class="admin-form-label">Image URL</label>
+<input type="text" name="image" value="<?= $project['image'] ?>" class="admin-form-input" />
+</div>
+<div class="admin-form-group">
+<label class="admin-form-label">Project Link</label>
+<input type="text" name="link" value="<?= $project['link'] ?>" class="admin-form-input" />
+</div>
+<div class="admin-form-group">
+<label class="admin-form-label">Tag</label>
+<input type="text" name="tag" value="<?= $project['tag'] ?>" class="admin-form-input" />
+</div>
+<div class="admin-control-buttons">
+<button type="submit" class="admin-btn-update">Update Project</button>
+</div>
+</form>
 
-                    <form method="POST" action="/watson-kingsley-portfolio/includes/scripts/projects.php">
-                        <input type="hidden" name="action" value="delete">
-                        <input type="hidden" name="id" value="<?= $project['id'] ?>">
-                        <div class="admin-control-buttons">
-                            <button type="submit" class="admin-btn-delete">Delete Project</button>
-                        </div>
-                    </form>
+<form method="POST" action="/watson-kingsley-portfolio/includes/scripts/projects.php">
+<input type="hidden" name="action" value="delete">
+<input type="hidden" name="id" value="<?= $project['id'] ?>">
+<div class="admin-control-buttons">
+<button type="submit" class="admin-btn-delete">Delete Project</button>
+</div>
+</form>
 
-                </div>
-                <?php endif; ?>
+</div>
+<?php endif; ?>
 
-            </div>
-        <?php endforeach; ?>
+</div>
+<?php endforeach; ?>
 
-    </div>
+</div>
+
+</div>
 </section>
 
 
@@ -489,8 +492,8 @@ $projects = $db->query('SELECT * FROM projects WHERE is_deleted = 0 ORDER BY cre
             </div>
 
             <a href="contact.php" class="contact-badge">
-                <span class="contact-badge__arrow">&#8599;</span>
                 <span class="contact-badge__label">Let's Talk</span>
+                <div class="contact-badge__circle">&#8599;</div>
             </a>
 
         </div>
