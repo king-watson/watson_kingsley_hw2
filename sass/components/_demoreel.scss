@@ -4,13 +4,10 @@
 
 .hero-video {
     background: #0a0a0a;
-    padding: 80px 0;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
     border-top: 1px solid #1a1a1a;
     border-bottom: 1px solid #1a1a1a;
-    row-gap: 24px;
+    position: relative;
+    overflow: hidden;
 
     &::before {
         content: '';
@@ -23,38 +20,392 @@
     }
 }
 
+.hero-video__inner {
+    padding: 20px 0 20px; // reduced top to match section spacing
+    position: relative;
+    z-index: 1;
+    row-gap: 24px;
+}
+
 .hero-video .section-label {
+    font-family: 'Figtree', sans-serif;
     color: #e8e800;
     font-size: 12px;
     display: block;
     margin-bottom: 12px;
+    letter-spacing: 0.08em;
 }
 
 .hero-video .section-title {
+    font-family: 'Special Gothic Expanded One', sans-serif;
     margin-bottom: 0;
 }
 
-.video-container {
-    position: relative;
-    z-index: 1;
-    border: 1px solid #1e1e1e;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: border-color 0.3s ease;
+// Split layout
+.video-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
 
-    &:hover {
-        border-color: yellow;
+    @media (min-width: 1024px) {
+        grid-template-columns: 2fr 1fr;
+        gap: 32px;
+        align-items: stretch; // key — forces both columns to equal height
     }
 }
 
-.video-container video {
-    width: 100%;
-    height: auto;
-    display: block;
+// Left — video + bottom strip
+.video-split__left {
+    display: flex;
+    flex-direction: column;
 }
 
+.video-container {
+    flex: 1; // stretches video to fill remaining space
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    border: 1px solid #1e1e1e;
+    border-bottom: none;
+    transition: border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+
+    .video-split__left:hover & {
+        border-color: #e8e800;
+    }
+}
+
+.video-split__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: 1px solid #1e1e1e;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    background: #0f0f0f;
+    flex-shrink: 0;
+}
+
+.video-split__year {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 13px;
+    color: #e8e800;
+    letter-spacing: 0.1em;
+}
+
+.video-split__tagline {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+    text-align: right;
+}
+
+// Custom player
+.custom-player {
+    position: relative;
+    background: #000;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+    flex-shrink: 0; // don't let the player squish
+
+    video {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+
+    &:hover .player-controls,
+    &.paused .player-controls {
+        opacity: 1;
+    }
+}
+
+.player-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+    z-index: 2;
+    transition: opacity 0.3s ease;
+
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.play-btn-large {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #e8e800;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0a0a0a;
+    transition: transform 0.2s ease, background 0.2s ease;
+
+    svg {
+        width: 28px;
+        height: 28px;
+        margin-left: 4px;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        background: #fff;
+    }
+}
+
+.player-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+    padding: 24px 16px 12px;
+}
+
+.progress-bar {
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 4px 0;
+
+    .progress-track {
+        position: relative;
+        height: 3px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 2px;
+    }
+
+    .progress-fill {
+        height: 100%;
+        width: 0%;
+        background: #e8e800;
+        border-radius: 2px;
+        pointer-events: none;
+    }
+
+    .progress-thumb {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #e8e800;
+        transition: transform 0.15s ease;
+        pointer-events: none;
+    }
+
+    &:hover .progress-thumb {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controls-left,
+.controls-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ctrl-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: color 0.2s ease, background 0.2s ease;
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    &:hover {
+        color: #e8e800;
+        background: rgba(255,255,255,0.08);
+    }
+}
+
+.volume-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 72px;
+    height: 3px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #e8e800;
+        cursor: pointer;
+    }
+
+    &::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #e8e800;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.time-display {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+// Right panel
+.video-split__right {
+    display: flex;
+    flex-direction: column;
+}
+
+.reel-panel {
+    border: 1px solid #1e1e1e;
+    border-radius: 12px;
+    background: #0f0f0f;
+    overflow: hidden;
+    flex: 1; // matches height of left column
+    display: flex;
+    flex-direction: column;
+}
+
+.reel-panel__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #1a1a1a;
+    flex-shrink: 0;
+}
+
+.reel-panel__label {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.reel-panel__count {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    color: #e8e800;
+    letter-spacing: 0.06em;
+}
+
+.reel-list {
+    list-style: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.reel-item {
+    padding: 18px 20px;
+    border-bottom: 1px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: background 0.2s ease;
+    flex: 1; // each item grows equally to fill panel height
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover {
+        background: #141414;
+    }
+}
+
+.reel-item__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reel-item__num {
+    font-family: 'Figtree', sans-serif;
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.08em;
+    font-weight: 700;
+}
+
+.reel-item__tag {
+    font-family: 'Figtree', sans-serif;
+    font-size: 10px;
+    color: #e8e800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.reel-item__title {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 15px;
+    color: #fff;
+}
+
+.reel-item__desc {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+}
+
+// Mobile
 @media (max-width: 767px) {
-    .hero-video {
+    .hero-video__inner {
         padding: 48px 0;
+    }
+
+    .volume-wrap {
+        display: none;
+    }
+
+    .video-split__tagline {
+        display: none;
     }
 }

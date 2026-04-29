@@ -42,6 +42,7 @@ main {
     color: #e8e800; /* Branding Neon Yellow */
     line-height: 1;
     margin-bottom: 40px;
+    margin-top: 60px;
 }
 
 .seven-overview-subtitle, 
@@ -131,9 +132,11 @@ main {
 .seven-deepdive {
     row-gap: 24px;
     margin-bottom: 60px;
+    padding-bottom: 50px;
 }
 
 .seven-deepdive-wrapper {
+    margin: 0; /* THIS IS THE MAGIC FIX */
     overflow: hidden;
     border-radius: 12px;
     border: 1px solid #1e1e1e;
@@ -148,6 +151,12 @@ main {
 
 .seven-deepdive-wrapper:hover .seven-deepdive-img {
     transform: scale(1.05);
+}
+
+/* Video Section Container */
+.seven-video {
+    gap: 30px; /* Controls the spacing between multiple videos in the grid */
+    margin-bottom: 60px;
 }
 
 /* Video Section */

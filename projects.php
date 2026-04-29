@@ -174,18 +174,38 @@ $deep_dives = array_filter([
   </section>
   <?php endif; ?>
 
- <?php 
+<?php 
 $all_videos = array_filter([$video_src, $video_src_2, $video_src_3, $video_src_4]);
+$video_count = count($all_videos); // Count how many videos exist
+
 if (!empty($all_videos)): ?>
 <section class="seven-video grid-con">
-  <?php foreach ($all_videos as $vid): ?>
-  <div class="seven-video-wrapper col-span-4 m-col-start-1 m-col-end-13 l-col-start-1 l-col-end-13">
+  <?php 
+  $i = 0;
+  foreach ($all_videos as $vid): 
+    
+    // Default: Full width for pages with only 1 video
+    $grid_classes = 'col-span-4 m-col-start-1 m-col-end-13 l-col-start-1 l-col-end-13';
+
+    // If there is more than 1 video, apply the 2x2 grid pattern
+    if ($video_count > 1) {
+        $positions = [
+            'col-span-4 m-col-start-1 m-col-end-7 l-col-start-1 l-col-end-7',   // Left Column
+            'col-span-4 m-col-start-7 m-col-end-13 l-col-start-7 l-col-end-13'  // Right Column
+        ];
+        $grid_classes = $positions[$i % 2]; // Alternates between left and right
+    }
+  ?>
+  <div class="seven-video-wrapper <?php echo $grid_classes; ?>">
     <video controls class="seven-video-element">
       <source src="<?php echo $vid; ?>" type="<?php echo str_ends_with($vid, '.webm') ? 'video/webm' : 'video/mp4'; ?>">
       Your browser does not support the video tag.
     </video>
   </div>
-  <?php endforeach; ?>
+  <?php 
+  $i++; 
+  endforeach; 
+  ?>
 </section>
 <?php endif; ?>
 
