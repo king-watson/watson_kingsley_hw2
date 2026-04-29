@@ -8,7 +8,8 @@
 
 header.grid-con {
   align-items: center;
-  padding: 18px 0;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 #header-logo {
@@ -787,7 +788,8 @@ header.grid-con {
 }
 
 .hero-video__inner {
-  padding: 20px 0 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: relative;
   z-index: 1;
   row-gap: 24px;
@@ -1090,6 +1092,8 @@ header.grid-con {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 0; /* Removes the default browser left indent */
+  margin: 0; /* Removes any default top/bottom spacing */
 }
 
 .reel-item {
@@ -1145,7 +1149,8 @@ header.grid-con {
 
 @media (max-width: 767px) {
   .hero-video__inner {
-    padding: 48px 0;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   .volume-wrap {
     display: none;
@@ -1168,44 +1173,8 @@ header.grid-con {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  margin-bottom: 80px;
   margin-top: 80px;
-}
-
-.contact-badge {
-  background: #e8e800;
-  border-radius: 10px;
-  padding: 28px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 24px;
-  text-decoration: none;
-  flex-shrink: 0;
-  min-height: 180px;
-  transition: background 0.2s ease, transform 0.2s ease;
-  margin-top: 30px;
-}
-.contact-badge:hover {
-  background: #fff;
-  transform: scale(1.05);
-}
-
-.contact-badge__arrow {
-  font-size: 22px;
-  color: #0a0a0a;
-  line-height: 1;
-}
-
-.contact-badge__label {
-  font-family: "Special Gothic Expanded One", sans-serif;
-  font-size: 10px;
-  color: #0a0a0a;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  margin-bottom: 80px;
 }
 
 .contact-content {
@@ -1258,6 +1227,45 @@ header.grid-con {
   font-size: 11px;
 }
 
+.contact-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #e8e800;
+  border-radius: 8px;
+  padding: 18px 28px;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.contact-badge:hover {
+  background: #fff;
+  transform: scale(1.03);
+}
+
+.contact-badge__label {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 13px;
+  color: #0a0a0a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.contact-badge__circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #e8e800;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
 @media (max-width: 767px) {
   .contact-cta {
     padding: 48px 0;
@@ -1269,15 +1277,7 @@ header.grid-con {
   }
   .contact-badge {
     width: 100%;
-    min-height: auto;
-    flex-direction: row;
     justify-content: center;
-    padding: 16px 24px;
-    gap: 12px;
-  }
-  .contact-badge__label {
-    writing-mode: horizontal-tb;
-    transform: none;
   }
   .contact-heading {
     font-size: 32px;
@@ -1321,7 +1321,8 @@ header.grid-con {
 }
 .featured-work {
   background: #0a0a0a;
-  padding: 80px 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
   position: relative;
   overflow: hidden;
 }
@@ -1481,7 +1482,8 @@ header.grid-con {
 
 @media (max-width: 767px) {
   .featured-work {
-    padding: 48px 0;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   .featured-heading {
     font-size: 32px;
