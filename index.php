@@ -300,7 +300,7 @@ $projects = $db->query('SELECT * FROM projects WHERE is_deleted = 0 ORDER BY cre
                     <span class="stat-label">Years creating</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-num">20+</span>
+                    <span class="stat-num">25+</span>
                     <span class="stat-label">Creative projects</span>
                 </div>
                 <div class="stat-item">
