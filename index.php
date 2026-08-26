@@ -291,20 +291,20 @@ $projects = $db->query('SELECT * FROM projects WHERE is_deleted = 0 ORDER BY cre
             <div class="overview-problem">
                 <div class="problem-inner">
                     <h3>Inside My Mind</h3>
-                    <p>I'm a 19-year-old student driven by a passion to create something meaningful from start to finish — something I can truly be proud of.</p>
+                    <p>I'm a 20-year-old student driven by a passion to create something meaningful from start to finish — something I can truly be proud of.</p>
                 </div>
             </div>
             <div class="stat-row">
                 <div class="stat-item">
-                    <span class="stat-num">2+</span>
-                    <span class="stat-label">Years designing</span>
+                    <span class="stat-num">7+</span>
+                    <span class="stat-label">Years creating</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-num">6</span>
-                    <span class="stat-label">Tools mastered</span>
+                    <span class="stat-num">20+</span>
+                    <span class="stat-label">Creative projects</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-num">19</span>
+                    <span class="stat-num">20</span>
                     <span class="stat-label">Years old</span>
                 </div>
             </div>
